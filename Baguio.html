@@ -21,7 +21,7 @@
         }
         .back-button {
             position: absolute;
-            bottom: 20px;
+            bottom: 10px;
             left: 50%;
             transform: translateX(-50%);
             padding: 10px 20px;
@@ -31,6 +31,7 @@
             text-decoration: none;
             border-radius: 5px;
             transition: background-color 0.3s ease;
+            z-index: 1; /* Ensure the back button is above other content */
         }
         .back-button:hover {
             background-color: #0056b3;
