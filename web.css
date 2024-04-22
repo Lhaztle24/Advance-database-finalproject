@@ -89,6 +89,17 @@ nav ul li a {
   color:#FFFFFF;
 }
 
+.cta-button {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #579;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  margin-top: 20px;
+  cursor: pointer;
+  
+}
 
   label.logo{
       font-size: 30px;
