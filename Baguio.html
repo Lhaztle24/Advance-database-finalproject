@@ -8,6 +8,7 @@
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
+            position: relative; /* Added to position the back button */
         }
         h1 {
             color: #1a75ff;
@@ -17,6 +18,22 @@
         }
         .activities {
             margin-top: 20px;
+        }
+        .back-button {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .back-button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -56,5 +73,7 @@
             <li>Hike or trek at nearby trails like Mount Pulag or the Yellow Trail</li>
         </ol>
     </div>
+
+    <a href="#" class="back-button">Back</a> <!-- Adjust href as needed -->
 </body>
 </html>
