@@ -2,37 +2,36 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
-    background-image: url('C.U.jpg'); 
-    background-size: cover; 
+    background-image: url('C.U.jpg');
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-   
 }
 
 .container {
-    max-width: 800px;
+    max-width: 100%; /* Changed to be responsive */
     margin: 0 auto;
-    background-color: #ff; 
+    background-color: #ffffff; /* Changed to valid color code */
     padding: 20px;
 }
 
 h1 {
-    color:  #ffffff; 
+    color: #ffffff;
 }
 
-h3{
-    color:  #ffffff; 
+h3 {
+    color: #ffffff;
 }
+
 p {
     color: #ffffff;
-
     line-height: 1.5;
 }
 
 .container li {
     list-style-type: none;
     margin: 10px 0;
-    color: #777; /* Correct the color value */
+    color: #777;
 }
 
 .container li a {
