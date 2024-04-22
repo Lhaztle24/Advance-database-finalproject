@@ -4,9 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Landing Page</title>
-  <link rel="stylesheet" href="web.css">
-  <script src="https://kit.fontawesome.com/a076d05399.js"></script> 
- 
   <style>
     .container {
       max-width: 1200px;
@@ -19,24 +16,38 @@
     }
 
     .menu {
-      display: flex;
+      display: none; /* Hide the menu by default */
       list-style-type: none;
       padding: 0;
       margin: 0;
+      background-color: #333;
+      flex-direction: column;
+      align-items: flex-start;
+      z-index: 999;
+      position: fixed;
+      top: 50px; /* Adjust as needed */
+      left: 0;
+      width: 100%;
+    }
+
+    .menu.active {
+      display: flex; /* Show the menu when active */
     }
 
     .menu li {
-      margin-right: 10px;
+      margin-right: 0;
+      margin-left: 20px; /* Adjust as needed */
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
     .menu a {
       color: white;
       text-decoration: none;
-      padding: 8px 12px; 
+      padding: 8px 12px;
       transition: background-color 0.3s ease;
-      display: flex; 
-      align-items: center; 
-      font-size: 13px; 
+      display: block;
       margin-right: 10px;
     }
 
@@ -45,34 +56,20 @@
       border-radius: 5px;
     }
 
+    .checkbtn {
+      display: none; /* Hide the burger menu button by default */
+    }
+
     @media screen and (max-width: 768px) {
       .menu {
-        display: none; /* Hide the menu by default */
-        position: fixed;
-        top: 50px; /* Adjust as needed */
-        left: 0;
-        height: calc(100vh - 50px); /* Use the remaining viewport height */
-        width: 100%;
-        background-color: #333;
-        flex-direction: column;
-        align-items: flex-start;
-        z-index: 999;
-      }
-
-      .menu.active {
-        display: flex; /* Show the menu when active */
-      }
-
-      .menu li {
-        margin-right: 0;
-        margin-left: 20px; /* Adjust as needed */
-        opacity: 1;
-        transform: translateY(0);
-        transition: opacity 0.3s ease, transform 0.3s ease;
+        top: 0;
+        height: 100vh; /* Use the full viewport height */
+        justify-content: center;
+        align-items: center;
       }
 
       .checkbtn {
-        display: block;
+        display: block; /* Show the burger menu button */
         color: white;
         font-size: 24px;
         padding: 8px 12px;
@@ -82,6 +79,11 @@
         right: 20px; /* Adjust as needed */
       }
 
+      .menu.active {
+        display: flex; /* Show the menu when active */
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
@@ -92,9 +94,7 @@
         <img src="Logo.jpg" alt="bus ticket logo">
       </div>
       <nav>
-        <label for="check" class="checkbtn"> 
-          <i class="fas fa-bars"></i>
-        </label>
+        <i class="fas fa-bars checkbtn"></i>
         <ul class="menu">
           <li><a href="about us.html">About</a></li>
           <li><a href="contact us.html">Contact Us</a></li>
