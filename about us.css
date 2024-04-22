@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
-    background-image:("transparent-bus-black.jpg");
+    background-image:('transparent-bus-black.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 }
