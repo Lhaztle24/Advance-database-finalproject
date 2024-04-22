@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Landing Page</title>
   <link rel="stylesheet" href="web.css">
   <script src="https://kit.fontawesome.com/a076d05399.js"></script> 
+ 
   <style>
-    
     .container {
       max-width: 1200px;
       margin: 0 auto;
@@ -44,37 +46,43 @@
     }
 
     @media screen and (max-width: 768px) {
-      .checkbtn {
-        display: block;
-      }
-
       .menu {
+        display: none; /* Hide the menu by default */
         position: fixed;
-        top: 0;
+        top: 50px; /* Adjust as needed */
         left: 0;
-        height: 50px; 
+        height: calc(100vh - 50px); /* Use the remaining viewport height */
         width: 100%;
         background-color: #333;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
+        flex-direction: column;
+        align-items: flex-start;
         z-index: 999;
       }
 
       .menu.active {
-        transform: translateX(0);
+        display: flex; /* Show the menu when active */
       }
 
       .menu li {
         margin-right: 0;
-        margin-left: 10px; 
-        opacity: 0;
-        transform: translateY(-20px);
+        margin-left: 20px; /* Adjust as needed */
+        opacity: 1;
+        transform: translateY(0);
         transition: opacity 0.3s ease, transform 0.3s ease;
       }
- </style>
+
+      .checkbtn {
+        display: block;
+        color: white;
+        font-size: 24px;
+        padding: 8px 12px;
+        cursor: pointer;
+        position: absolute;
+        top: 10px; /* Adjust as needed */
+        right: 20px; /* Adjust as needed */
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -83,9 +91,10 @@
         <img src="Logo.jpg" alt="bus ticket logo">
       </div>
       <nav>
-  
+        <label for="check" class="checkbtn"> 
           <i class="fas fa-bars"></i>
         </label>
+        <input type="checkbox" id="check">
         <ul class="menu">
           <li><a href="about us.html">About</a></li>
           <li><a href="contact us.html">Contact Us</a></li>
@@ -106,7 +115,15 @@
   <footer id="footer">
     <p>&copy; 2024 TRAVEL TRANSIT.CO All Rights Reserved.</p>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const checkBtn = document.querySelector('.checkbtn');
+      const menu = document.querySelector('.menu');
 
-  <script src="web.js"></script>
+      checkBtn.addEventListener('click', function() {
+        menu.classList.toggle('active');
+      });
+    });
+  </script>
 </body>
 </html>
