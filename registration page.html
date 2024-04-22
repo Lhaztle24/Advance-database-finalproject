@@ -1,94 +1,110 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Registration Page</title>
+  <title>Online Ticket Booking</title>
   <style>
-
     body {
-   
       background-image: url('images (1).jpeg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      
-    }
-   
-
-    label {
-      color: black; 
+      color: white;
+      font-family: Arial, sans-serif;
     }
 
     h1 {
-      color: black; 
-      text-shadow:2px 2px 4px rgba(0, 0, 0, 0.8) ;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     }
 
-h3 {
-      color: black; 
-    }
-    p { 
-        color: black;
+    h3 {
+      color: white;
     }
 
-    @media only screen and (max-width: 600px) {
-      h1 {
-        font-size: 24px; 
-      }
- 
+    p {
+      color: white;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    label {
+      color: white;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border: none;
+      border-radius: 3px;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      background-color: #007bff;
+      color: white;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      border: 1px solid white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    footer a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
     }
   </style>
 </head>
 <body>
-    
-  <h1>Registration</h1>
-  
- <h3>Register here now to get a chance to win a two tickets 🎫 for incoming Marvel Studios Deadpool 3</h3>
- <div>
-<a> Watch the Marvel Studios Deadpool 3 | Official Trailer Coming this February 2024</a>
-</div>
+  <h1>Online Ticket Booking</h1>
+  <div>
+    <h3>Book your tickets now!</h3>
+    <form action="book_tickets.php" method="POST">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required><br>
 
-<div>
-    
-    <h3>
-       Make sure that your Full name and email are correct!
-    </h3>
- <form action="register.php" method="POST">
-      
-     <label for="name">Full Name:</label>
-    <input type="text" id="name" name="name" required><br><br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required><br>
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required><br><br>
+      <label for="destination">Destination:</label>
+      <input type="text" id="destination" name="destination" required><br>
 
-<label for="address">Address:</label>
-    <input type="address" id="address" name="address" required><br><br>
-    
-    <label for="gender">Gender:</label>
-    <select id="gender" name="gender">
-      <option value="male">Male</option>
-      <option value="female">Female</option>
-      <option value="other">Other</option>
-    </select><br><br>
+      <label for="date">Date of Travel:</label>
+      <input type="date" id="date" name="date" required><br>
 
-    <input type="submit" value="Register">
+      <input type="submit" value="Book Tickets">
     </form>
- </div>
-</body>
+  </div>
 
-<footer>
-    
-    <h3>
-       We have a gift to the big fan of Marvel.</h3>
-  
-  <p>What are you waiting for?</p>
-  <p> Register now! </p>
-    
-    <p>This promo expired in June 30, 2023</p>
-    <div>
-        
-          <a href="index.html" class="cta-button">Home</a>
-   
-    </div>
-</footer>
+  <footer>
+    <p>Book your tickets now and enjoy the journey!</p>
+    <a href="index.html">Home</a>
+  </footer>
+</body>
 </html>
-                                                                                                                                        
