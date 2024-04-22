@@ -67,24 +67,7 @@ nav ul li a {
   text-transform:uppercase;
 
 }
-.checkbtn {
-  font-size: 30px;
-  float: right;
-  color: white;
-  line-height: 70px;
-  margin-right: 10px;
-  cursor: pointer;
-  display: none;
-}
 
-@media screen and (max-width: 768px) {
-  .checkbtn {
-    display: block;
-  }
-}
-
-
-      
      
 .hero {
   text-align: center;
@@ -116,14 +99,7 @@ nav ul li a {
   margin-top: 20px;
   cursor: pointer;
   
-  
 }
-
-#check{
-    display: none;
-}
-
-@media (max-width:952px){
 
   label.logo{
       font-size: 30px;
@@ -142,13 +118,6 @@ nav ul li a {
        
     }
 }
-
-#check:checked ~ nav {
-  transition: all 0.3s ease;
-  opacity: 0;
-  visibility: hidden;
-}
-
 
 
 footer {
