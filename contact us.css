@@ -17,11 +17,12 @@ body {
 }
 
 h1 {
-    color: #33;
+    color:  #ffffff; 
 }
 
 p {
-    color: #77;
+    color: #ffffff;
+
     line-height: 1.5;
 }
 
