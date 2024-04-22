@@ -90,7 +90,8 @@ nav ul li a {
 }
 
 .cta-button {
-
+  
+  padding: 12px 20px;
   background-color: #579;
   color: #fff;
   text-decoration: none;
