@@ -13,27 +13,7 @@
       margin: 0;
       padding: 0;
     }
- .burger-menu {
-      display: block; /* display as block to control size */
-      cursor: pointer; /* change cursor to pointer when hovering */
-    }
-    .burger-menu div {
-      width: 25px; /* width of each line */
-      height: 3px; /* height of each line */
-      background-color: #333; /* color of each line */
-      margin: 5px 0; /* spacing between lines */
-      transition: all 0.3s ease; /* smooth transition */
-    }
-    /* CSS para sa animasyon kapag binuksan ang menu */
-    .burger-menu.active div:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px); /* rotate and move first line */
-    }
-    .burger-menu.active div:nth-child(2) {
-      opacity: 0; /* hide second line */
-    }
-    .burger-menu.active div:nth-child(3) {
-      transform: rotate(-45deg) translate(4px, -4px); /* rotate and move third line */
-    }
+ 
     .container {
       max-width: 1200px;
       margin: 0 auto;
@@ -125,12 +105,6 @@
   </style>
 </head>
 <body>
-  <div class="burger-menu" onclick="toggleMenu()">
-  <div></div>
-  <div></div>
-  <div></div>
-</div>
-
   <div class="container">
     <header>
       <div class="logo"> 
