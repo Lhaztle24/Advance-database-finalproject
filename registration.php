@@ -6,16 +6,16 @@ include("db_config.php");
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Retrieve form data
-    $Full_name = $_POST['name'];
+    $Full_Name = $_POST['name'];
     $Email = $_POST['email'];
     $Destination = $_POST['destination'];
     $Date = $_POST['date'];
 
     // Prepare SQL statement
-    $stmt = $conn->prepare("INSERT INTO registration (Full_name, Email, Destination, Date) VALUES (?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO registration (Full_Name, Email, Destination, Date) VALUES (?, ?, ?, ?)");
 
     // Bind parameters
-    $stmt->bind_param("ssss", $Full_name, $Email, $Destination, $Date);
+    $stmt->bind_param("ssss", $Full_Name, $Email, $Destination, $Date);
 
     // Execute the statement
     if ($stmt->execute()) {
