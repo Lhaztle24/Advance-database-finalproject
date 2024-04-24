@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt = $conn->prepare("INSERT INTO registration1 (Full_Name, Email, Destination, Date_of_Travel) VALUES (?, ?, ?, ?)");
 
     // Bind parameters
-    $stmt->bind_param("ssss", $Full_Name, $Email, $Destination, $Date_of_Travel);
+    $stmt->bind_param( $Full_Name, $Email, $Destination, $Date_of_Travel);
 
     // Execute the statement
     if ($stmt->execute()) {
