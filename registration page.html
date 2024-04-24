@@ -84,30 +84,35 @@
 <body>
   <h1>TRAVEL TRANSIT.CO</h1>
   <div>
-    <h3>Fill up the form to book a ticket!</h3>
-    <form action="register.php" method="POST">
-      <label for="name">Full Name:</label>
-      <input type="text" id="name" name="name" required><br>
+    <?php if (!isset($_POST['name'])) { ?>
+      <h3>Fill up the form to book a ticket!</h3>
+      <form action="register.php" method="POST">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required><br>
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
 
-      <label for="destination">Destination:</label>
-      <select id="destination" name="destination" required>
-        <option value="Manila">Manila</option>
-        <option value="Calamba">Calamba</option>
-        <option value="Santa Rosa">Santa Rosa</option>
-        <option value="Batangas">Batangas</option>
-        <option value="Baguio">Baguio</option>
-        <option value="Sorsogon">Sorsogon</option>
-        <option value="Nueva Ecija">Nueva Ecija</option>
-      </select><br>
+        <label for="destination">Destination:</label>
+        <select id="destination" name="destination" required>
+          <option value="Manila">Manila</option>
+          <option value="Calamba">Calamba</option>
+          <option value="Santa Rosa">Santa Rosa</option>
+          <option value="Batangas">Batangas</option>
+          <option value="Baguio">Baguio</option>
+          <option value="Sorsogon">Sorsogon</option>
+          <option value="Nueva Ecija">Nueva Ecija</option>
+        </select><br>
 
-      <label for="date">Date of Travel:</label>
-      <input type="date" id="date" name="date" required><br>
+        <label for="date">Date of Travel:</label>
+        <input type="date" id="date" name="date" required><br>
 
-      <input type="submit" value="Book Tickets">
-    </form>
+        <input type="submit" value="Book Tickets">
+      </form>
+    <?php } else { ?>
+      <h3>Thank you for booking your ticket!</h3>
+      <p>We have received your booking details. An email confirmation will be sent to you shortly.</p>
+    <?php } ?>
   </div>
 
   <footer>
