@@ -3,53 +3,107 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Admin Dashboard</title>
+<title>Admin Login</title>
 <style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  h2 {
-    text-align: center;
-    margin-top: 50px;
-  }
-  ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 20px auto;
-    width: 80%;
-    text-align: center;
-  }
-  li {
-    display: inline-block;
-    margin: 10px;
-  }
-  a {
-    text-decoration: none;
-    color: #333;
-    padding: 10px 20px;
-    border: 1px solid #333;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-  }
-  a:hover {
-    background-color: #333;
-    color: #fff;
-  }
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f2f2f2;
+    }
+
+    .login-container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .login-container h2 {
+        text-align: center;
+    }
+
+    .login-container form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .login-container form input[type="text"],
+    .login-container form input[type="password"] {
+        margin: 10px 0;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+
+    .login-container form input[type="submit"] {
+        padding: 10px;
+        border: none;
+        border-radius: 3px;
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .login-container form input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+
+     .back-button {
+        position: absolute;
+        left: 50%;
+        bottom: 10px; /* Gumagawa ito ng offset sa ibaba */
+        transform: translateX(-50%);
+        background-color: #007bff;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 3px;
+        cursor: pointer;
+     }
+     
 </style>
 </head>
 <body>
 
-<h2>Welcome to the Admin Dashboard</h2>
+<div class="login-container">
+    
+    <h2>Admin Login</h2>
 
-<ul>
-  <li><a href="buses.html">Buses</a></li>
-  <li><a href="routes.html">Routes</a></li>
-  <li><a href="customers.html">Customers</a></li>
-  <li><a href="bookings.html">Bookings</a></li>
-  <li><a href="new_admin.html">New Admin</a></li>
-</ul>
+<form id="loginForm" action="Admin_dashboard" method="post" onsubmit="return validateForm()">
+  <div>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+  </div>
+  <div>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+  </div>
+  <button type="submit">Login</button>
+</form>
+
+<p id="error" style="color: red; display: none;">Incorrect username or password. Please try again.</p>
+
+<script>
+function validateForm() {
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+
+  // Replace these values with your actual admin username and password
+  var correctUsername = "admin";
+  var correctPassword = "admin123";
+
+  if (username === correctUsername && password === correctPassword) {
+    return true; // Redirect to dashboard if credentials are correct
+  } else {
+    document.getElementById("error").style.display = "block";
+    return false; // Show error message and prevent form submission
+  }
+}
+</script>
 
 </body>
 </html>
