@@ -1,59 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Login</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f2f2f2;
+    }
+
+    .login-container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .login-container h2 {
+        text-align: center;
+    }
+
+    .login-container form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .login-container form input[type="text"],
+    .login-container form input[type="password"] {
+        margin: 10px 0;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+
+    .login-container form input[type="submit"] {
+        padding: 10px;
+        border: none;
+        border-radius: 3px;
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .login-container form input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+
+     .back-button {
+        position: absolute;
+        left: 50%;
+        bottom: 10px; /* Gumagawa ito ng offset sa ibaba */
+        transform: translateX(-50%);
+        background-color: #007bff;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 3px;
+        cursor: pointer;
+     }
+     
+</style>
 </head>
 <body>
 
-<?php
-// Check if form is submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Check if username and password are set and not empty
-    if(isset($_POST['username']) && isset($_POST['password']) && !empty($_POST['username']) && !empty($_POST['password'])){
-        // Check if username and password match the admin credentials
-        $admin_username = "admin";
-        $admin_password = "adminpassword";
-        
-        // Get the entered username and password
-        $entered_username = $_POST['username'];
-        $entered_password = $_POST['password'];
-        
-        // Check if entered credentials match the admin credentials
-        if($entered_username === $admin && $entered_password === $11111){
-            // Redirect to admin dashboard or any other admin page
-            header("Location: admin_dashboard.html");
-            exit();
-        } else {
-            // If credentials don't match, display an error message
-            $error_message = "Invalid username or password";
-        }
-    } else {
-        // If username or password is not set or empty, display an error message
-        $error_message = "Please enter both username and password";
-    }
-}
-?>
+<div class="login-container">
+    <h2>Admin Login</h2>
 
-<h1>Admin Login</h1>
-
-<?php
-// Display error message if exists
-if(isset($error_message)) {
-    echo "<p style='color: red;'>$error_message</p>";
-}
-?>
-
-<form method="post">
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required><br><br>
-    
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required><br><br>
-    
-    <button type="submit">Login</button>
+<form id="loginForm" action="Admin_dashboard.html" method="post">
+    <label for="username">Username:</label><br>
+    <input type="text" id="username" name="username"><br>
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password"><br><br>
+    <input type="submit" value="Login">
 </form>
+    
+</div>
 
+   
+</script>
 </body>
 </html>
