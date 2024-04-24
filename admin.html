@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $entered_password = $_POST['password'];
         
         // Check if entered credentials match the admin credentials
-        if($entered_username === $admin_username && $entered_password === $admin_password){
+        if($entered_username === $admin && $entered_password === $11111){
             // Redirect to admin dashboard or any other admin page
             header("Location: admin_dashboard.html");
             exit();
