@@ -2,7 +2,7 @@
 
 include ("db_config.php");
 
-if ($_SERVER ["REQUEST_METHOD] = "POST) {
+if ($_SERVER ["REQUEST_METHOD] = "POST") {
 
  $Full_name = $_POST ['name'];
  $Email = $_POST ['email'];
