@@ -9,13 +9,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $Full_Name = $_POST['name'];
     $Email = $_POST['email'];
     $Destination = $_POST['destination'];
-    $Date = $_POST['date'];
+    $Date_of_Travel = $_POST['date'];
 
     // Prepare SQL statement
-    $stmt = $conn->prepare("INSERT INTO registration (Full_Name, Email, Destination, Date) VALUES (?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO registration1 (Full_Name, Email, Destination, Date_of_Travel) VALUES (?, ?, ?, ?)");
 
     // Bind parameters
-    $stmt->bind_param("ssss", $Full_Name, $Email, $Destination, $Date);
+    $stmt->bind_param("ssss", $Full_Name, $Email, $Destination, $Date_of_Travel);
 
     // Execute the statement
     if ($stmt->execute()) {
