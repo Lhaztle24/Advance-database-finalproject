@@ -1,16 +1,30 @@
- <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-      $name = $_POST["name"];
-      $email = $_POST["email"];
-      $destination = $_POST["destination"];
-      $date = $_POST["date"];
+ <?php 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Retrieve form data
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $destination = $_POST['destination'];
+    $date = $_POST['date'];
+    
+    // Save the data to a file, database, or send it via email
+    // For example, you can save it to a text file
+    $file = fopen("registered_tickets.txt", "a");
+    fwrite($file, "Name: $name\n");
+    fwrite($file, "Email: $email\n");
+    fwrite($file, "Destination: $destination\n");
+    fwrite($file, "Date of Travel: $date\n");
+    fwrite($file, "-----------------\n");
+    fclose($file);
 
-      // You can add more validation or processing logic here
+    // Redirect to a thank you page
+    header("Location: thankyou.html");
+    exit;
+} else {
+    // If accessed directly without form submission, redirect to home page
+    header("Location: index.html");
+    exit;
+}
 
-      echo "<p>Thank you, $name, for booking your ticket to $destination on $date. An email confirmation has been sent to $email.</p>";
-    } else {
-      echo "<p>Sorry, there was an error processing your request.</p>";
-    }
     ?>
   </div>
 </body>
