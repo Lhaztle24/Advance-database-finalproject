@@ -73,7 +73,7 @@
     
     <h2>Admin Login</h2>
 
-<form id="loginForm" action="Admin_dashboard" method="post" onsubmit="return validateForm()">
+<form id="loginForm" action="admin.html" method="post" onsubmit="return validateForm()">
   <div>
     <label for="username">Username:</label>
     <input type="text" id="username" name="username" required>
