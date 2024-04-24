@@ -16,7 +16,7 @@ if ($_SERVER ["REQUEST_METHOD] = "POST) {
  $stmt bind_param("ssssi", $Full_name, $Email, $Destination, $Date);
 
  if ($stmt excute()) {
-  echo "order placed successfully";
+  echo "Order placed successfully";
  }
  else{
   echo "Error: " . $stmt error;
