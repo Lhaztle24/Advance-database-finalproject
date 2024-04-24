@@ -81,18 +81,33 @@
     
 </div>
 
-    <script>
-    // Function to check admin credentials and display dashboard
-    function login() {
-        var username = document.getElementById("username").value;
-        var password = document.getElementById("password").value;
-        
-        // Check if username and password match
-        if (username === "admin" && password === "adminpassword") {
-            document.getElementById("login-form").style.display = "none";
-            document.getElementById("dashboard").style.display = "block";
-        } else {
-            alert("Invalid username or password");
+   <?php
+// Check if username and password are set and not empty
+if(isset($_POST['username']) && isset($_POST['password']) && !empty($_POST['username']) && !empty($_POST['password'])){
+    // Check if username and password match the admin credentials
+    $admin_username = "admin";
+    $admin_password = "adminpassword";
+    
+    // Get the entered username and password
+    $entered_username = $_POST['username'];
+    $entered_password = $_POST['password'];
+    
+    // Check if entered credentials match the admin credentials
+    if($entered_username === $admin_username && $entered_password === $admin_password){
+        // Redirect to admin dashboard or any other admin page
+        header("Location: admin_dashboard.html");
+        exit();
+    } else {
+        // If credentials don't match, redirect back to login page with an error message
+        header("Location: login.html?error=invalid_credentials");
+        exit();
+    }
+} else {
+    // If username or password is not set or empty, redirect back to login page with an error message
+    header("Location: login.html?error=empty_fields");
+    exit();
+}
+?>
         }
     }
 </script>
