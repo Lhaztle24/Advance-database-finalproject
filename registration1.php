@@ -6,6 +6,7 @@ include("db_config.php");
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Retrieve form data
+    $User_ID = $_POST['ID'];
     $Full_Name = $_POST['name'];
     $Email = $_POST['email'];
     $Destination = $_POST['destination'];
