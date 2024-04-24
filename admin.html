@@ -80,7 +80,22 @@
     </form>
     
 </div>
-  
+
+    <script>
+    // Function to check admin credentials and display dashboard
+    function login() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        
+        // Check if username and password match
+        if (username === "admin" && password === "adminpassword") {
+            document.getElementById("login-form").style.display = "none";
+            document.getElementById("dashboard").style.display = "block";
+        } else {
+            alert("Invalid username or password");
+        }
+    }
+</script>
 </body>
 </html>
 
