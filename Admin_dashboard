@@ -4,10 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
-     <link rel="import" href="admin.html">
+<link rel="import" href="admin.html">
 </head>
 <body>
-    <h1>Welcome to Admin Dashboard</h1>
+
+<!-- Login Form -->
+<div id="login-form">
+    <h1>Admin Login</h1>
+    <form action="login.php" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+<!-- Admin Dashboard Links -->
+<div id="dashboard" style="display: none;">
+    <h1>Welcome, Admin!</h1>
     <ul>
         <li><a href="buses.php">BUSES</a></li>
         <li><a href="routes.php">ROUTES</a></li>
@@ -15,5 +32,24 @@
         <li><a href="booking.php">BOOKING</a></li>
         <li><a href="new_admin.php">NEW ADMIN</a></li>
     </ul>
+</div>
+
+<script>
+    // Function to check admin credentials and display dashboard
+    function login() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        
+        // Here you should compare the entered username and password with the actual credentials
+        // For simplicity, I'm using hardcoded values here
+        if (username === "admin" && password === "adminpassword") {
+            document.getElementById("login-form").style.display = "none";
+            document.getElementById("dashboard").style.display = "block";
+        } else {
+            alert("Invalid username or password");
+        }
+    }
+</script>
+
 </body>
 </html>
