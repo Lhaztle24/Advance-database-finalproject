@@ -11,7 +11,7 @@ if ($_SERVER ["REQUEST_METHOD] = "POST) {
  
 
 
- $stmt = $conn prepare ("INSERT INTO register (Full_name, Email, Destination, Date) VALUES (?, ?, ?, ?)");
+ $stmt = $conn prepare ("INSERT INTO registration (Full_name, Email, Destination, Date) VALUES (?, ?, ?, ?)");
 
  $stmt bind_param("ssssi", $Full_name, $Email, $Destination, $Date);
 
