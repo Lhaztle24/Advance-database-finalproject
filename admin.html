@@ -97,7 +97,9 @@ function validateForm() {
   var correctPassword = "admin10";
 
   if (username === correctUsername && password === correctPassword) {
-    return true; // Redirect to dashboard if credentials are correct
+    // Redirect to another HTML page after successful login
+    window.location.href = "Admin_dashboard";
+    return false; // Prevent form submission (not strictly necessary, but good practice)
   } else {
     document.getElementById("error").style.display = "block";
     return false; // Show error message and prevent form submission
