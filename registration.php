@@ -1,35 +1,26 @@
- <?php
-// Include the database configuration file
-include("db_config.php");
+<?php 
 
-// Check if the form is submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+include ("db_config.php");
 
-    // Retrieve form data
-    $Full_name = $_POST['name'];
-    $Email = $_POST['email'];
-    $Destination = $_POST['destination'];
-    $Date = $_POST['date'];
+if ($_SERVER ["REQUEST_METHOD] = "POST) {
 
-    // Prepare SQL statement
-    $stmt = $conn->prepare("INSERT INTO registration (Full_name, Email, Destination, Date) VALUES (?, ?, ?, ?)");
+ $Full_name = $_POST ['name'];
+ $Email = $_POST ['email'];
+ $Destination = $_POST ['destination'];
+ $Date = $_POST ['date'];
+ 
 
-    // Bind parameters
-    $stmt->bind_param("ssss", $Full_name, $Email, $Destination, $Date);
 
-    // Execute the statement
-    if ($stmt->execute()) {
-        echo "Order placed successfully";
-    } else {
-        echo "Error: " . $stmt->error;
-    }
+ $stmt = $conn prepare ("INSERT INTO registration (Full_name, Email, Destination, Date) VALUES (?, ?, ?, ?)");
 
-    // Close the statement
-    $stmt->close();
-}
+ $stmt bind_param("ssssi", $Full_name, $Email, $Destination, $Date);
 
-// Close the database connection
-$conn->close();
-?>
+ if ($stmt excute()) {
+  echo "Order placed successfully";
+ }
+ else{
+  echo "Error: " . $stmt error;
+ }
+    ?>
  
 
