@@ -1,54 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  h2 {
+    text-align: center;
+    margin-top: 50px;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px auto;
+    width: 80%;
+    text-align: center;
+  }
+  li {
+    display: inline-block;
+    margin: 10px;
+  }
+  a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 20px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  a:hover {
+    background-color: #333;
+    color: #fff;
+  }
+</style>
 </head>
 <body>
 
-<!-- Login Form -->
-<div id="login-form">
-    <h1>Admin Login</h1>
-    <form action="login.php" method="post">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br><br>
-        
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br><br>
-        
-        <button type="submit">Login</button>
-    </form>
-</div>
+<h2>Welcome to the Admin Dashboard</h2>
 
-<!-- Admin Dashboard Links -->
-<div id="dashboard" style="display: none;">
-    <h1>Welcome, Admin!</h1>
-    <ul>
-        <li><a href="buses.php">BUSES</a></li>
-        <li><a href="routes.php">ROUTES</a></li>
-        <li><a href="customers.php">CUSTOMERS</a></li>
-        <li><a href="booking.php">BOOKING</a></li>
-        <li><a href="new_admin.php">NEW ADMIN</a></li>
-    </ul>
-</div>
-
-<script>
-    // Function to check admin credentials and display dashboard
-    function login() {
-        var username = document.getElementById("username").value;
-        var password = document.getElementById("password").value;
-        
-        // Here you should compare the entered username and password with the actual credentials
-        // For simplicity, I'm using hardcoded values here
-        if (username === "admin" && password === "adminpassword") {
-            document.getElementById("login-form").style.display = "none";
-            document.getElementById("dashboard").style.display = "block";
-        } else {
-            alert("Invalid username or password");
-        }
-    }
-</script>
+<ul>
+  <li><a href="buses.html">Buses</a></li>
+  <li><a href="routes.html">Routes</a></li>
+  <li><a href="customers.html">Customers</a></li>
+  <li><a href="bookings.html">Bookings</a></li>
+  <li><a href="new_admin.html">New Admin</a></li>
+</ul>
 
 </body>
 </html>
