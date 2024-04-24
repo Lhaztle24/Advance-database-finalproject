@@ -7,11 +7,11 @@ if ($_SERVER ["REQUEST_METHOD] = "POST) {
  $Full_name = $_POST ['name'];
  $Email = $_POST ['email'];
  $Destination = $_POST ['destination'];
- $date = $_POST ['date'];
+ $Date = $_POST ['date'];
  
 
 
- $stmt = $conn prepare ("INSERT INTO register (Full_name, Email, Destination, date) VALUES (?, ?, ?, ?)");
+ $stmt = $conn prepare ("INSERT INTO register (Full_name, Email, Destination, Date) VALUES (?, ?, ?, ?)");
 
  $stmt bind_param("ssssi", $Full_name, $Email, $Destination, $Date);
 
