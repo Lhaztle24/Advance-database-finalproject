@@ -12,7 +12,7 @@ if ($_SERVER ["REQUEST_METHOD] = "POST) {
 
  $stmt = $conn prepare ("INSERT INTO register (Full_name, Email, Destination, date) VALUES (?, ?, ?, ?)
 
- $stmt bind_param("ssssi", $Full_name, $Email, $Destination, $date);
+ $stmt bind_param("ssssi", $Full_name, $Email, $Destination, $Date);
 
  if ($stmt excute()) {
   echo "order placed successfully";
